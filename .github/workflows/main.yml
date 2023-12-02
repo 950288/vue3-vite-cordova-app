@@ -62,7 +62,7 @@ jobs:
       - name: Sign the APK
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: path/to/artifacts/signed
+          releaseDirectory: path/to/artifacts/
           signingKeyBase64: ${{ secrets.SIGNING_KEY_BASE64 }}
           alias: ${{ secrets.KEY_ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
@@ -72,10 +72,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: signed-apk
-          path: path/to/artifacts/signed/android-release-unsigned-signed.apk
+          path: path/to/artifacts/android-release-unsigned-signed.apk
 
       - name: test
         run: |
-         cd path/to/artifacts/signed/
+         cd path/to/artifacts/
          ls
         
