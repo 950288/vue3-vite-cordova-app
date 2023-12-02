@@ -67,11 +67,15 @@ jobs:
           alias: ${{ secrets.KEY_ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
-          output: path/to/artifacts/app-release-signed.apk
 
       - name: Upload signed APK
         uses: actions/upload-artifact@v2
         with:
           name: signed-apk
-          path: path/to/artifacts/app-release-signed.apk
+          path: path/to/artifacts
+
+      - name: test
+        run: |
+         cd path/to/artifacts
+         ls
         
