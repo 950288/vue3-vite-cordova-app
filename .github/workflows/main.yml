@@ -48,5 +48,29 @@ jobs:
         with:
           name: android-release-unsigned.apk
           path: ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
-        
+
+  signApp:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download artifacts from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: android-release-unsigned.apk
+          path: path/to/artifacts
+      - name: Sign the APK
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: path/to/artifacts
+          signingKeyBase64: ${{ secrets.SIGNING_KEY_BASE64 }}
+          alias: ${{ secrets.KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Upload signed APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: signed-apk
+          path: path/to/artifacts/app-release-signed.apk
         
