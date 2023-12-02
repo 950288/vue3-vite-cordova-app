@@ -72,7 +72,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: signed-apk
-          path: path/to/artifacts/android-release-unsigned-signed.apk
+          path: path/to/artifacts/app-release-unsigned-signed.apk
 
       - name: test
         run: |
