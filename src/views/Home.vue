@@ -1,6 +1,5 @@
 <template>
-    <div>
+    <main>
         <h1>Home</h1>
-    </div>
-    <Menu msg="Vite + Vue" />
+    </main>
 </template>
