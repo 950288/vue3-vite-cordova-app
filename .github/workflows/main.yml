@@ -32,6 +32,7 @@ jobs:
           pnpm run build
       - name: Build for debug
         run: |
+          ls
           cordova platform add android
           cordova build android
       - name: Upload app-debug.apk
