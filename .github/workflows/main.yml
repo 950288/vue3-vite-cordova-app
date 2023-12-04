@@ -27,12 +27,12 @@ jobs:
         run: |
           pnpm install
           pnpm install -g cordova
-          cordova platform add android
       - name: Build for fontend
         run: |
           pnpm run build
       - name: Build for debug
         run: |
+          cordova platform add android
           cordova build android
       - name: Upload app-debug.apk
         uses: actions/upload-artifact@v2 
