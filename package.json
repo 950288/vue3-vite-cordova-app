@@ -13,7 +13,7 @@
   "keywords": [
     "ecosystem:cordova"
   ],
-  "author": "Apache Cordova Team",
+  "author": "95028",
   "license": "Apache-2.0",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
