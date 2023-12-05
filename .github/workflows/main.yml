@@ -27,6 +27,11 @@ jobs:
         run: |
           pnpm install
           pnpm install -g cordova
+      
+      - name: Download src
+        run: |
+        curl -o ./logo.png https://obj-1309508094.cos.ap-shanghai.myqcloud.com/StrawTreatment/logo.png
+        
       - name: Build for fontend
         run: |
           pnpm run build
